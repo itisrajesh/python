@@ -6,8 +6,12 @@ EMPTY = ' '
 PLAYER = 'X'
 COMPUTER = 'O'
 
-# create a board
 def create_board():
+    """
+    Description : Create 3x3 Board
+    Input : None
+    Output : {board : 2D Array}
+    """
     board = []
     for i in range(ROW):
         row = []
@@ -16,7 +20,6 @@ def create_board():
         board.append(row)
     return board
 
-# print the board
 def print_board(board):
     print('\n')
     for i in range(ROW):
@@ -27,10 +30,12 @@ def print_board(board):
         else :
             print('\n')
 
-
-
-# check if the board is full
 def is_board_full(board):
+    """
+    Description : check if the board is full
+    Input : {board : 2D Array}
+    Output : None
+    """
     for i in range(ROW):
         for j in range(COLUMN):
             if board[i][j] == EMPTY:
@@ -42,6 +47,7 @@ def is_winner(board, player):
     """
     Description : check if the player has won
     Input : {board : 2D Array , player : X or 0}
+    Output : {is_winnder : bool}
     """
     for i in range(ROW):
         if board[i][0] == player and board[i][1] == player and board[i][2] == player:
@@ -56,8 +62,12 @@ def is_winner(board, player):
     return False
 
 
-# get the player move
 def player_move(board):
+    """
+    Description : Move the hance of the player
+    Input : {board : 2D Array}
+    Output : None
+    """
     while True:
         row = int(input("Enter the row: "))
         column = int(input("Enter the column: "))
@@ -70,8 +80,12 @@ def player_move(board):
             break
 
 
-# get the computer move
 def computer_move(board):
+    """
+    Description : Move the hance of the computer
+    Input : {board : 2D Array}
+    Output : None
+    """
     while True:
         row = random.randint(0, 2)
         column = random.randint(0, 2)
@@ -82,6 +96,11 @@ def computer_move(board):
 
 # play the game
 def play_game():
+    """
+    Description : Run the game
+    Input : None
+    Output : None
+    """
     board = create_board()
     print_board(board)
     while True:
