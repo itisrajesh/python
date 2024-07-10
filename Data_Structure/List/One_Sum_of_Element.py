@@ -1,5 +1,3 @@
-# Write a Python program to sum all the items in a list.
-
 def sum_of_element(list):
     """
     Description: Take list as input and return the sum of all the elements in the list.
