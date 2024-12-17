@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirm Your Order</h1>
+        <p>Please review your information below and confirm your order:</p>
+
+        <p><strong>Name:</strong> {{data.name}}</p>
+        <p><strong>Address:</strong> {{data.address}}</p>
+        <p><strong>Contact:</strong> {{data.contact}}</p>
+        <p><strong>Product Name:</strong>{{data.productName}}</p>
+        <p><strong>Quantity:</strong> {{data.quantity}}</p>
+
+        <form action="/summary" method="post">
+            <label>
+            <input type="checkbox" id="confirmOrder" name="confirmOrder" value="yes" required>
+                I confirm that the information above is correct and wish to place the order.
+            </label>
+            <input type="submit" value="Place Order">
+        </form>
+    </div>
+</body>
+</html>
